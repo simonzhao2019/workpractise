@@ -13,11 +13,26 @@
 <script type="text/javascript" src="../js/babel.min.js"></script>
 
 <script type="text/babel">
-  /*
-  需求: 自定义组件, 功能说明如下
-    1. 显示h2标题, 初始文本为: 你喜欢我
-    2. 点击标题更新为: 我喜欢你
-  */
+ class Like extends React.Component{
+     state = {
+       ilikeyou:false
+     }
+    handleClick=()=>{
+     const ilikeyou=!this.state.ilikeyou
+     this.setState({
+       ilikeyou
+     })
+   }
+   render(){
+     const {ilikeyou}=this.state;
+     const text=ilikeyou ? "我喜欢你":"你喜欢我"
+return <h1 onClick={this.handleClick}>{text}</h1>
+   }
+ }
+ ReactDOM.render(
+   <Like />,
+   document.getElementById("example")
+ )
 </script>
 </body>
 </html>

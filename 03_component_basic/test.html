@@ -8,12 +8,27 @@
 
   <div id="example1"></div>
   <div id="example2"></div>
+  <head></head>
 
   <script type="text/javascript" src="../js/react.development.js"></script>
   <script type="text/javascript" src="../js/react-dom.development.js"></script>
   <script type="text/javascript" src="../js/babel.min.js"></script>
 
   <script type="text/babel">
+class Welcome extends React.Component {
+
+
+  render(){
+    console.log(this)
+ return <h1>大家好，我是React</h1>
+  
+  } 
+}
+
+ReactDOM.render(
+<Welcome />,
+document.getElementById('example2')
+);
   </script>
 </body>
 </html>
